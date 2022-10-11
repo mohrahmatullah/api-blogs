@@ -12,6 +12,11 @@ class TagController extends Controller
         return Tag::all();
     }
 
+    public function show($id)
+    {
+        return Tag::find($id);
+    }
+
     public function store(Request $request)
     {
         try {

@@ -9,7 +9,12 @@ class PostController extends Controller
 {
     public function index()
     {
-        return Post::all();
+        return Post::with('category')->get();
+    }
+
+    public function show($id)
+    {
+        return Post::find($id);
     }
 
     public function store(Request $request)
@@ -19,7 +24,7 @@ class PostController extends Controller
             $post->title        = $request->title;
             $post->body         = $request->body;
             $post->category_id  = $request->category_id;
-            $post->tag_id       = $request->tag_id;
+            $post->tag_id       = json_encode($request->tag_id);
             $post->status       = $request->status;
 
             if ($post->save()) {
@@ -38,7 +43,7 @@ class PostController extends Controller
             $post->title        = $request->title;
             $post->body         = $request->body;
             $post->category_id  = $request->category_id;
-            $post->tag_id       = $request->tag_id;
+            $post->tag_id       = json_encode($request->tag_id);
             $post->status       = $request->status;
 
             if ($post->save()) {

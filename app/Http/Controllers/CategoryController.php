@@ -12,6 +12,11 @@ class CategoryController extends Controller
         return Category::all();
     }
 
+    public function show($id)
+    {
+        return Category::find($id);
+    }
+
     public function store(Request $request)
     {
         try {

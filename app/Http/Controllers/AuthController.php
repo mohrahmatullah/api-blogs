@@ -84,6 +84,11 @@ class AuthController extends Controller
         return auth()->user();
     }
 
+    public function profile_user(Request $request)
+    {
+        return User::find(auth()->user()->id);
+    }
+
     /**
      * Get the token array structure.
      *
@@ -96,7 +101,8 @@ class AuthController extends Controller
         return response()->json([
             'access_token' => $token,
             'token_type' => 'bearer',
-            'expires_in' => auth()->factory()->getTTL() * 60
+            'expires_in' => auth()->factory()->getTTL() * 60,
+            'auth_id' => auth()->user()->id,
         ]);
     }
 }
