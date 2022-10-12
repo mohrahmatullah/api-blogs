@@ -29,3 +29,13 @@ $ php artisan db:seed --class=CategoryTableDataSeeder
 $ php artisan db:seed --class=TagTableDataSeeder
 $ php artisan db:seed --class=PostTableDataSeeder
 ```
+
+4. Insomnia
+
+```
+	- Silahkan Import file json insomnia ke aplikasi insomnia atau postman untuk melihat formatnya
+	- filenya ada di folder
+	
+	insomnia/insomnia..
+
+```
