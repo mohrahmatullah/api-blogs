@@ -81,12 +81,12 @@ class AuthController extends Controller
 
     public function profile(Request $request)
     {
-        return auth()->user();
+        return User::orderBy('created_at','DESC')->get();
     }
 
     public function profile_user(Request $request)
     {
-        return User::find(auth()->user()->id);
+        return auth()->user();
     }
 
     /**
