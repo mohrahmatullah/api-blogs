@@ -46,4 +46,8 @@ $router->group(['prefix' => 'api'], function () use ($router) {
         $router->post('/tag/{id}', 'TagController@update');
         $router->delete('/tag/{id}', 'TagController@destroy');
     });
+
+    $router->get('/posts/category/{id}', 'HomeController@index');
+    $router->get('/posts/{id}', 'HomeController@show');
+    $router->get('/tag', 'TagController@index');  
 });

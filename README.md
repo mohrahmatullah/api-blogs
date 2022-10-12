@@ -32,4 +32,7 @@ $ php artisan jwt:secret
 
 ```
 $ php artisan migrate
+$ php artisan db:seed --class=CategoryTableDataSeeder
+$ php artisan db:seed --class=TagTableDataSeeder
+$ php artisan db:seed --class=PostTableDataSeeder
 ```
