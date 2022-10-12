@@ -11,10 +11,10 @@ class HomeController extends Controller
     public function index( $id )
     {
         if($id == 'all'){
-            return Post::with('category')->orderBy('created_at', 'DESC')->get();
+            return Post::with('category')->where('status','publish')->orderBy('created_at', 'DESC')->get();
         }
         else{
-            return Post::where('category_id', $id)->with('category')->orderBy('created_at', 'DESC')->get();
+            return Post::where('category_id', $id)->with('category')->where('status','publish')->orderBy('created_at', 'DESC')->get();
         }
     }
 
