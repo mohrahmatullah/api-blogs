@@ -49,5 +49,6 @@ $router->group(['prefix' => 'api'], function () use ($router) {
 
     $router->get('/posts/category/{id}', 'HomeController@index');
     $router->get('/posts/{id}', 'HomeController@show');
-    $router->get('/tag', 'TagController@index');  
+    $router->get('/list-tag', 'TagController@index');  
+    $router->get('/list-category', 'CategoryController@index'); 
 });
