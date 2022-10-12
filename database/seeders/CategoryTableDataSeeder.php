@@ -20,8 +20,7 @@ class CategoryTableDataSeeder extends Seeder
             ['id' => 1, 'title' => 'Freestyle'],
             ['id' => 2, 'title' => 'Hiburan'],
             ['id' => 3, 'title' => 'Food'],
-            ['id' => 4, 'title' => 'Otomotif'],
-            ['id' => 5, 'title' => 'Perkantoran']
+            ['id' => 4, 'title' => 'Otomotif']
         ];
         
         foreach ($objects as $row) {
