@@ -9,7 +9,7 @@ class PostController extends Controller
 {
     public function index()
     {
-        return Post::with('category')->get();
+        return Post::with('category')->orderBy('created_at', 'DESC')->get();
     }
 
     public function show($id)

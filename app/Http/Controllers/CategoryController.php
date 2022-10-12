@@ -9,7 +9,7 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        return Category::all();
+        return Category::orderBy('created_at', 'DESC')->get();
     }
 
     public function show($id)

@@ -9,7 +9,7 @@ class TagController extends Controller
 {
     public function index()
     {
-        return Tag::all();
+        return Tag::orderBy('created_at', 'DESC')->get();
     }
 
     public function show($id)
