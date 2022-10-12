@@ -11,24 +11,17 @@ Lumen 8
 git clone https://github.com/mohrahmatullah/api-blogs.git
 ```
 
-2. Install composer packages
+
+2. Setup
 
 ```
-cd api-blogs
-$ composer install
-```
-
-3. Create and setup .env file
-
-```
-make a copy of .env.example
-$ copy .env.example .env
+$ cd api-blogs
 $ php artisan key:generate
 put database credentials in .env file
 $ php artisan jwt:secret
 ```
 
-4. Migrate and insert records
+3. Migrate and insert records
 
 ```
 $ php artisan migrate
