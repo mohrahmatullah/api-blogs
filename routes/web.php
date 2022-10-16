@@ -45,6 +45,11 @@ $router->group(['prefix' => 'api'], function () use ($router) {
         $router->post('/tag', 'TagController@store');
         $router->post('/tag/{id}', 'TagController@update');
         $router->delete('/tag/{id}', 'TagController@destroy');
+
+        $router->get('/payment_list', 'PaymentController@index');        
+        $router->post('/payment', 'PaymentController@store');
+        $router->get('/currency', 'CurrencyController@index');
+        $router->get('/chanel', 'MerchantController@index');
     });
 
     $router->get('/posts/category/{id}', 'HomeController@index');

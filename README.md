@@ -28,6 +28,9 @@ $ php artisan migrate
 $ php artisan db:seed --class=CategoryTableDataSeeder
 $ php artisan db:seed --class=TagTableDataSeeder
 $ php artisan db:seed --class=PostTableDataSeeder
+$ php artisan db:seed --class=MerchantTableDataSeeder
+$ php artisan db:seed --class=CurrencyTableDataSeeder
+$ php artisan db:seed --class=MerchantCurrencyTableDataSeeder
 ```
 
 4. Insomnia
