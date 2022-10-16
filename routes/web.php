@@ -51,7 +51,7 @@ $router->group(['prefix' => 'api'], function () use ($router) {
         $router->get('/currency', 'CurrencyController@index');
         $router->get('/chanel', 'MerchantController@index');
     });
-
+    
     $router->get('/posts/category/{id}', 'HomeController@index');
     $router->get('/posts/{id}', 'HomeController@show');
     $router->get('/list-tag', 'TagController@index');  
