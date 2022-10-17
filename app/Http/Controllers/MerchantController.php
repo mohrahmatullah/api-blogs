@@ -9,7 +9,7 @@ class MerchantController extends Controller
 {
     public function index()
     {
-        return Merchant::select('name_merchant','chanel')->orderBy('created_at', 'DESC')->get();
+        return Merchant::select('id','name_merchant','chanel')->orderBy('created_at', 'DESC')->get();
     }
 
     public function show($id)
