@@ -36,26 +36,24 @@ class PaymentController extends Controller
 
                 if ($post->save()) {
 
-                    $post1_update = Wallet::where('user_id',auth()->user()->id)->first();
-                    if($post1_update){
-                        $post1_update->amount = $request->price + $post1_update->amount;
-                        $post1_update->save(); 
-                    }
-                    else{                    
+                    $Wallet = Wallet::where('user_id',auth()->user()->id)->exists();
+                    if(!$Wallet){
                         $post1 = new Wallet;
                         $post1->user_id = auth()->user()->id;
                         $post1->currency_id = $request->currency_id;
-                        $post1->amount = $request->price;
-                        $post1->save();
+                        $post1->save(); 
+                    }
+                    else{
+                        $post_wallet = Wallet::where('user_id',auth()->user()->id)->first();
                     }
 
-                    $post3= new Transaction;
-                    $post3->payment_id = $post->id;
-                    $post3->wallet_id = $post1->id ?? $post1_update->id;
-                    $post3->merchant_id = $request->merchant_id;
-                    $post3->description = $request->description;
-                    $post3->status = 'pending';
-                    $post3->save();
+                    $post2= new Transaction;
+                    $post2->payment_id = $post->id;
+                    $post2->wallet_id = $post1->id ?? $post_wallet->id;
+                    $post2->merchant_id = $request->merchant_id;
+                    $post2->description = $request->description;
+                    $post2->status = 'pending';
+                    $post2->save();
 
                     return response()->json(['status' => 'success', 'message' => 'Payment successfully']);
                 }                
@@ -67,12 +65,33 @@ class PaymentController extends Controller
 
     public function confirm_status(Request $request){
         $payment = Payment::where('order_id', $request->order_id)->first();
-        $transaction = Transaction::where('payment_id',$payment->id)->first();
-        $transaction->status = 'settlement';
-        $transaction->confirms = 1;
-        $transaction->save();
 
-        return response()->json(['status' => 'success', 'message' => 'Confirm successfully']);
+        if($payment){            
+            $transaction = Transaction::where('payment_id',$payment->id)->first();
+            if($transaction->status == 'pending'){                
+                $transaction->status = $request->confirms == 1 ? 'settlement':'cancelled';
+                $transaction->confirms = $request->confirms;
+                if($transaction->save()){
+                    if($request->confirms == 1){
+                        $post1_update = Wallet::where('user_id',auth()->user()->id)->first();
+                        if($post1_update){
+                            $post1_update->amount = $payment->price + $post1_update->amount;
+                            $post1_update->save(); 
+                        }
+                        else{                    
+                            $post1_update->amount = $payment->price;
+                            $post1_update->save();
+                        }
+                    }
+                }
+            }
+            else{
+                return response()->json(['status' => 'error', 'message' => 'Not confirmed']);
+            }
+
+            return response()->json(['status' => 'success', 'message' => 'Confirm successfully']);            
+        }
+
     }
 
     public function wallet(){
