@@ -95,7 +95,7 @@ class PaymentController extends Controller
     }
 
     public function wallet(){
-        $payment = Wallet::select('c.abbreviation as currency','wallet.amount')
+        $payment = Wallet::select('wallet.amount','c.name as currency','c.abbreviation')
         ->leftjoin('currency as c','c.id','wallet.currency_id')->where('wallet.user_id', auth()->user()->id)->first();
 
         return $payment;
