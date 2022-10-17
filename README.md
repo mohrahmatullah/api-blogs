@@ -33,6 +33,11 @@ $ php artisan db:seed --class=CurrencyTableDataSeeder
 $ php artisan db:seed --class=MerchantCurrencyTableDataSeeder
 ```
 
+atau bisa import database dari folder
+```
+	sql/sql.sql
+```
+
 4. Insomnia
 
 ```
