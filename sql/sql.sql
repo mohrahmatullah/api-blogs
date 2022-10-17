@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 17, 2022 at 03:41 AM
+-- Generation Time: Oct 17, 2022 at 09:21 AM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -58,10 +58,10 @@ CREATE TABLE IF NOT EXISTS `categories` (
 --
 
 INSERT INTO `categories` (`id`, `title`, `created_at`, `updated_at`) VALUES
-(1, 'Freestyle', '2022-10-16 20:40:45', '2022-10-16 20:40:45'),
-(2, 'Hiburan', '2022-10-16 20:40:45', '2022-10-16 20:40:45'),
-(3, 'Food', '2022-10-16 20:40:45', '2022-10-16 20:40:45'),
-(4, 'Otomotif', '2022-10-16 20:40:45', '2022-10-16 20:40:45');
+(1, 'Freestyle', '2022-10-17 02:20:28', '2022-10-17 02:20:28'),
+(2, 'Hiburan', '2022-10-17 02:20:28', '2022-10-17 02:20:28'),
+(3, 'Food', '2022-10-17 02:20:28', '2022-10-17 02:20:28'),
+(4, 'Otomotif', '2022-10-17 02:20:28', '2022-10-17 02:20:28');
 
 -- --------------------------------------------------------
 
@@ -84,8 +84,8 @@ CREATE TABLE IF NOT EXISTS `currency` (
 --
 
 INSERT INTO `currency` (`id`, `name`, `abbreviation`, `created_at`, `updated_at`) VALUES
-(1, 'Rupiah', 'RP', '2022-10-16 20:40:52', '2022-10-16 20:40:52'),
-(2, 'Dollar', 'USD', '2022-10-16 20:40:52', '2022-10-16 20:40:52');
+(1, 'Rupiah', 'RP', '2022-10-17 02:20:33', '2022-10-17 02:20:33'),
+(2, 'Dollar', 'USD', '2022-10-17 02:20:33', '2022-10-17 02:20:33');
 
 -- --------------------------------------------------------
 
@@ -111,8 +111,8 @@ CREATE TABLE IF NOT EXISTS `merchant` (
 --
 
 INSERT INTO `merchant` (`id`, `user_id`, `name_merchant`, `chanel`, `website`, `notify_url`, `created_at`, `updated_at`) VALUES
-(1, NULL, 'BNI', 'bank_transfer', NULL, NULL, '2022-10-16 20:40:49', '2022-10-16 20:40:49'),
-(2, NULL, 'BCA', 'bank_transfer', NULL, NULL, '2022-10-16 20:40:49', '2022-10-16 20:40:49');
+(1, NULL, 'BNI', 'bank_transfer', NULL, NULL, '2022-10-17 02:20:32', '2022-10-17 02:20:32'),
+(2, NULL, 'BCA', 'bank_transfer', NULL, NULL, '2022-10-17 02:20:32', '2022-10-17 02:20:32');
 
 -- --------------------------------------------------------
 
@@ -135,8 +135,8 @@ CREATE TABLE IF NOT EXISTS `merchant_currency` (
 --
 
 INSERT INTO `merchant_currency` (`id`, `merchant_id`, `currency_id`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, '2022-10-16 20:40:54', '2022-10-16 20:40:54'),
-(2, 2, 1, '2022-10-16 20:40:54', '2022-10-16 20:40:54');
+(1, 1, 1, '2022-10-17 02:20:34', '2022-10-17 02:20:34'),
+(2, 2, 1, '2022-10-17 02:20:34', '2022-10-17 02:20:34');
 
 -- --------------------------------------------------------
 
@@ -210,12 +210,12 @@ CREATE TABLE IF NOT EXISTS `posts` (
 --
 
 INSERT INTO `posts` (`id`, `category_id`, `tag_id`, `title`, `body`, `status`, `created_at`, `updated_at`) VALUES
-(1, 1, '[\"1\",\"2\"]', 'Lorem Ipsum', 'What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum', 'publish', '2022-10-16 20:40:47', '2022-10-16 20:40:47'),
-(2, 2, '[\"1\",\"5\"]', 'Lorem Ipsum', 'What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum', 'publish', '2022-10-16 20:40:47', '2022-10-16 20:40:47'),
-(3, 2, '[\"1\",\"2\"]', 'Lorem Ipsum', 'What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum', 'draft', '2022-10-16 20:40:47', '2022-10-16 20:40:47'),
-(4, 1, '[\"4\",\"3\"]', 'Lorem Ipsum', 'What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum', 'publish', '2022-10-16 20:40:47', '2022-10-16 20:40:47'),
-(5, 3, '[\"6\",\"4\"]', 'Lorem Ipsum', 'What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum', 'publish', '2022-10-16 20:40:47', '2022-10-16 20:40:47'),
-(6, 1, '[\"7\",\"1\"]', 'Lorem Ipsum', 'What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum', 'publish', '2022-10-16 20:40:47', '2022-10-16 20:40:47');
+(1, 1, '[\"1\",\"2\"]', 'Lorem Ipsum', 'What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum', 'publish', '2022-10-17 02:20:31', '2022-10-17 02:20:31'),
+(2, 2, '[\"1\",\"5\"]', 'Lorem Ipsum', 'What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum', 'publish', '2022-10-17 02:20:31', '2022-10-17 02:20:31'),
+(3, 2, '[\"1\",\"2\"]', 'Lorem Ipsum', 'What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum', 'draft', '2022-10-17 02:20:31', '2022-10-17 02:20:31'),
+(4, 1, '[\"4\",\"3\"]', 'Lorem Ipsum', 'What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum', 'publish', '2022-10-17 02:20:31', '2022-10-17 02:20:31'),
+(5, 3, '[\"6\",\"4\"]', 'Lorem Ipsum', 'What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum', 'publish', '2022-10-17 02:20:31', '2022-10-17 02:20:31'),
+(6, 1, '[\"7\",\"1\"]', 'Lorem Ipsum', 'What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum', 'publish', '2022-10-17 02:20:31', '2022-10-17 02:20:31');
 
 -- --------------------------------------------------------
 
@@ -237,25 +237,25 @@ CREATE TABLE IF NOT EXISTS `tags` (
 --
 
 INSERT INTO `tags` (`id`, `title`, `created_at`, `updated_at`) VALUES
-(1, 'Freestyle', '2022-10-16 20:40:46', '2022-10-16 20:40:46'),
-(2, 'Hiburan', '2022-10-16 20:40:46', '2022-10-16 20:40:46'),
-(3, 'Food', '2022-10-16 20:40:46', '2022-10-16 20:40:46'),
-(4, 'Otomotif', '2022-10-16 20:40:46', '2022-10-16 20:40:46'),
-(5, 'Perkantoran', '2022-10-16 20:40:46', '2022-10-16 20:40:46'),
-(6, 'Kapal', '2022-10-16 20:40:46', '2022-10-16 20:40:46'),
-(7, 'Kendaraan Bermotor', '2022-10-16 20:40:46', '2022-10-16 20:40:46'),
-(8, 'Ruang Kios', '2022-10-16 20:40:46', '2022-10-16 20:40:46'),
-(9, 'Mesin dan peralatan', '2022-10-16 20:40:46', '2022-10-16 20:40:46'),
-(10, 'Pabrik', '2022-10-16 20:40:46', '2022-10-16 20:40:46'),
-(11, 'Perkebunan', '2022-10-16 20:40:46', '2022-10-16 20:40:46'),
-(12, 'Pesawat Terbang', '2022-10-16 20:40:46', '2022-10-16 20:40:46'),
-(13, 'Pusat Pembelanjaan', '2022-10-16 20:40:46', '2022-10-16 20:40:46'),
-(14, 'Ruko', '2022-10-16 20:40:46', '2022-10-16 20:40:46'),
-(15, 'Rumah Sakit', '2022-10-16 20:40:46', '2022-10-16 20:40:46'),
-(16, 'Tanah', '2022-10-16 20:40:46', '2022-10-16 20:40:46'),
-(17, 'Tanah dan Bangunan', '2022-10-16 20:40:46', '2022-10-16 20:40:46'),
-(18, 'Mix Used', '2022-10-16 20:40:46', '2022-10-16 20:40:46'),
-(19, 'Persediaan', '2022-10-16 20:40:46', '2022-10-16 20:40:46');
+(1, 'Freestyle', '2022-10-17 02:20:29', '2022-10-17 02:20:29'),
+(2, 'Hiburan', '2022-10-17 02:20:29', '2022-10-17 02:20:29'),
+(3, 'Food', '2022-10-17 02:20:29', '2022-10-17 02:20:29'),
+(4, 'Otomotif', '2022-10-17 02:20:30', '2022-10-17 02:20:30'),
+(5, 'Perkantoran', '2022-10-17 02:20:30', '2022-10-17 02:20:30'),
+(6, 'Kapal', '2022-10-17 02:20:30', '2022-10-17 02:20:30'),
+(7, 'Kendaraan Bermotor', '2022-10-17 02:20:30', '2022-10-17 02:20:30'),
+(8, 'Ruang Kios', '2022-10-17 02:20:30', '2022-10-17 02:20:30'),
+(9, 'Mesin dan peralatan', '2022-10-17 02:20:30', '2022-10-17 02:20:30'),
+(10, 'Pabrik', '2022-10-17 02:20:30', '2022-10-17 02:20:30'),
+(11, 'Perkebunan', '2022-10-17 02:20:30', '2022-10-17 02:20:30'),
+(12, 'Pesawat Terbang', '2022-10-17 02:20:30', '2022-10-17 02:20:30'),
+(13, 'Pusat Pembelanjaan', '2022-10-17 02:20:30', '2022-10-17 02:20:30'),
+(14, 'Ruko', '2022-10-17 02:20:30', '2022-10-17 02:20:30'),
+(15, 'Rumah Sakit', '2022-10-17 02:20:30', '2022-10-17 02:20:30'),
+(16, 'Tanah', '2022-10-17 02:20:30', '2022-10-17 02:20:30'),
+(17, 'Tanah dan Bangunan', '2022-10-17 02:20:30', '2022-10-17 02:20:30'),
+(18, 'Mix Used', '2022-10-17 02:20:30', '2022-10-17 02:20:30'),
+(19, 'Persediaan', '2022-10-17 02:20:30', '2022-10-17 02:20:30');
 
 -- --------------------------------------------------------
 
