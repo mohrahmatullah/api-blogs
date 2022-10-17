@@ -10,9 +10,15 @@ use Illuminate\Http\Request;
 
 class PaymentController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return Payment::orderBy('created_at', 'DESC')->get();
+        $payment = Payment::where('payment.order_id',$request->order_id)
+        ->select('payment.order_id','payment.price','t.description','t.status','m.name_merchant','m.chanel','c.success_url','c.cancel_url')
+        ->join('transaction as t','t.payment_id','payment.id')
+        ->join('merchant as m','m.id','t.merchant_id')
+        ->leftjoin('callbacks as c','c.user_id','payment.user_id')
+        ->orderBy('payment.created_at', 'DESC')->get();;
+        return $payment;
     }
 
     public function store(Request $request)
@@ -44,5 +50,15 @@ class PaymentController extends Controller
         } catch (\Exception $e) {
             return response()->json(['status' => 'error', 'message' => $e->getMessage()]);
         }
+    }
+
+    public function confirm_status(Request $request){
+        $payment = Payment::where('order_id', $request->order_id)->first();
+        $transaction = Transaction::where('payment_id',$payment->id)->first();
+        $transaction->status = 'settlement';
+        $transaction->confirms = 1;
+        $transaction->save();
+
+        return response()->json(['status' => 'success', 'message' => 'Confirm successfully']);
     }
 }

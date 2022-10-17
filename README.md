@@ -36,7 +36,7 @@ $ php artisan db:seed --class=MerchantCurrencyTableDataSeeder
 4. Insomnia
 
 ```
-	- Silahkan Import file json insomnia ke aplikasi insomnia atau postman untuk melihat formatnya insomnia collection
+	- Silahkan Import file json insomnia ke aplikasi insomnia untuk melihat formatnya insomnia collection
 	- filenya ada di folder
 	
 	insomnia/insomnia..

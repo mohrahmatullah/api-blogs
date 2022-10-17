@@ -46,12 +46,17 @@ $router->group(['prefix' => 'api'], function () use ($router) {
         $router->post('/tag/{id}', 'TagController@update');
         $router->delete('/tag/{id}', 'TagController@destroy');
 
-        $router->get('/payment_list', 'PaymentController@index');        
+        $router->post('/payment_list', 'PaymentController@index');        
         $router->post('/payment', 'PaymentController@store');
         $router->get('/currency', 'CurrencyController@index');
         $router->get('/chanel', 'MerchantController@index');
+
+        $router->post('/callback_list', 'CallbackController@show');
+        $router->post('/callback', 'CallbackController@store');
+        $router->post('/callback_update', 'CallbackController@update');
+        $router->post('/callback_status', 'PaymentController@confirm_status');
     });
-    
+
     $router->get('/posts/category/{id}', 'HomeController@index');
     $router->get('/posts/{id}', 'HomeController@show');
     $router->get('/list-tag', 'TagController@index');  

@@ -9,7 +9,7 @@ class CurrencyController extends Controller
 {
     public function index()
     {
-        return Currency::orderBy('created_at', 'DESC')->get();
+        return Currency::select('name','abbreviation')->orderBy('created_at', 'DESC')->get();
     }
 
     public function show($id)

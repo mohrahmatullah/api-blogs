@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePaymentTable extends Migration
+class CreateCallbacksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreatePaymentTable extends Migration
      */
     public function up()
     {
-        Schema::create('payment', function (Blueprint $table) {
+        Schema::create('callbacks', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
-            $table->foreignId('order_id');
-            $table->integer('price');
+            $table->foreignId('user_id')->nullable();
+            $table->string('success_url')->nullable();
+            $table->string('cancel_url')->nullable();
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreatePaymentTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('payment');
+        Schema::dropIfExists('callbacks');
     }
 }
