@@ -55,6 +55,8 @@ $router->group(['prefix' => 'api'], function () use ($router) {
         $router->post('/callback', 'CallbackController@store');
         $router->post('/callback_update', 'CallbackController@update');
         $router->post('/callback_status', 'PaymentController@confirm_status');
+
+        $router->get('/wallet', 'PaymentController@wallet');
     });
 
     $router->get('/posts/category/{id}', 'HomeController@index');

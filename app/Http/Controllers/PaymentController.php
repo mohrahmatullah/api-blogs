@@ -74,4 +74,11 @@ class PaymentController extends Controller
 
         return response()->json(['status' => 'success', 'message' => 'Confirm successfully']);
     }
+
+    public function wallet(){
+        $payment = Wallet::select('c.abbreviation as currency','wallet.amount')
+        ->leftjoin('currency as c','c.id','wallet.currency_id')->where('wallet.user_id', auth()->user()->id)->first();
+
+        return $payment;
+    }
 }
