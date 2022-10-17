@@ -10,9 +10,9 @@ use Illuminate\Http\Request;
 
 class PaymentController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
-        $payment = Payment::where('payment.order_id',$request->order_id)
+        $payment = Payment::where('payment.user_id',auth()->user()->id)
         ->select('payment.order_id','payment.price','t.description','t.status','m.name_merchant','m.chanel','c.success_url','c.cancel_url')
         ->join('transaction as t','t.payment_id','payment.id')
         ->join('merchant as m','m.id','t.merchant_id')
